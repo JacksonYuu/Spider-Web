@@ -1,0 +1,67 @@
+.right-content{
+	margin-bottom: 100px;
+}
+.panel-diy {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.panel-diy a {
+	color: #555;
+}
+
+.nav-tabs {
+	border: none;
+}
+
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover
+	{
+	color: #428bca;
+	border: 0;
+	border-bottom: 2px solid #428bca;
+	background: none;
+}
+
+.majorway {
+	float: left;
+}
+
+.panel-body .tab-pane select {
+	height: 25px;
+	padding: 1px 5px;
+}
+.match{color: #f00;}
+.intro{
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2; 
+}
+.oneline{
+	max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mr10{margin-right:10px}
+
+.font{height: 30px;margin-bottom: 10px;}
+
+.analysetitle > li{
+padding: 12px 20px 10px;
+text-align:center
+}
+
+.analysetitle > li > a{
+color:#808080;
+}
+
+.analysetitle > .active{
+border-bottom:2px solid #428bca
+}
+
+.analysetitle > .active > a{
+color:#428bca;
+}

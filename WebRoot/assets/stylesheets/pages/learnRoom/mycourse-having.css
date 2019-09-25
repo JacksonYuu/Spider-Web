@@ -1,0 +1,201 @@
+.course {
+	text-decoration: none;
+	margin: 10px 0
+}
+
+.course-box:active,.course-box:hover {
+	box-shadow: 0 3px 8px 0 #eee
+}
+
+.course-box {
+	display: block;
+	position: relative;
+	min-height: 240px;
+	margin: 0;
+	background: #fff;
+	box-shadow: 0 2px 2px 0 #eee
+}
+
+.course-box .sign-box {
+	width: 100%;
+	color: #565a61;
+	padding: 0 5%;
+	position: absolute;
+	z-index: 9;
+	top: -5px
+}
+
+.course-box .sign-box .course-new {
+	margin-right: 5px
+}
+
+.course-box .sign-box .course-follow {
+	display: none;
+	color: #f35e69;
+	font-size: 18px;
+	margin-top: 15px
+}
+
+.course-box .course-img {
+	width: 100%
+}
+
+.course-box .course-img>img {
+	width: 100%;
+	height: 140px
+}
+
+.course-box .course-progress-bar {
+	width: 100%;
+	height: 5px;
+	background-color: #eee
+}
+
+.course-box .course-progress-bar>div {
+	background-color: #5ac65a;
+	box-shadow: none
+}
+
+.course-box .course-body {
+	padding: 2% 5% 0
+}
+
+.course-box .course-body .course-title {
+	display: inline-block;
+	width: 100%;
+	color: #4c5157;
+	font-size: 16px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.course-box .course-body:after {
+	content: "";
+	display: block;
+	clear: both
+}
+
+.course-box .course-footer {
+	width: 100%;
+	height: 40px;
+	color: #9b9da2;
+	padding: 10px 5%;
+	overflow: hidden
+}
+
+.course-box .course-footer .course-per-num {
+	display: inline-block;
+	padding: 4px 0 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: center
+}
+
+.course-box .course-footer .course-bootcamp {
+	padding: 3px 10px;
+	color: #fff;
+	border-radius: 100px;
+	background-color: #f66e6e
+}
+
+.course-box .course-footer .course-money {
+	padding: 3px 10px;
+	color: #fff;
+	border-radius: 100px;
+	background-color: #ffae0f
+}
+
+.course-box .course-footer .course-free {
+	padding: 3px 10px;
+	color: #fff;
+	border-radius: 100px;
+	background-color: #59cf4a
+}
+
+.course-box .course-footer:after {
+	content: "";
+	display: block;
+	clear: both
+}
+
+.btn-warning {
+	color: #eea236 !important;
+	background-color: #FFFFFF !important;
+}
+
+.course-row {
+	margin: 20px 0;
+	/* 	background: #fff;
+	padding: 23px 0 0 0; */
+}
+
+.VivaTimeline dl dd .time1 {
+	position: absolute;
+	top: -27px;
+	left: -2%;
+	display: inline-block;
+	width: 100px;
+	padding: 10px 20px;
+	color: #4989f3;
+}
+
+.VivaTimeline dl dd .circ1 {
+	position: absolute;
+	top: -15px;
+	left: 8%;
+	z-index: 200;
+	width: 15px;
+	height: 15px;
+	margin-left: -8px;
+	/* background-color: #3276b1; */
+	border: 2px solid #4989f3;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+
+.VivaTimeline dl:before {
+	position: absolute;
+	top: 20px;
+	bottom: 0;
+	left: 50%;
+	z-index: 100;
+	width: 2px;
+	margin-left: -1px;
+	content: '';
+	background-color: #4989f3;
+}
+
+
+.VivaTimeline dl:before {
+	position: absolute;
+	top: 20px;
+	bottom: -5px;
+	left: 8%;
+	z-index: 100;
+	width: 2px;
+	margin-left: -1px;
+	content: '';
+	background-color: #4989f3;
+}
+
+.VivaTimeline dl dd .events {
+	position: relative;
+	width: 90%;
+	padding: 10px 0 0;
+	margin-top: -24px;
+	background-color: white;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.VivaTimeline dl dd.pos-left .events {
+	float: right;
+}
+
+.VivaTimeline dl dd .events:before {
+	border-width: 0px;
+}

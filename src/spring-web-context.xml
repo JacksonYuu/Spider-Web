@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/task  
+		http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+ 
+    <!-- 启动对@Aspectj的支持 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+ 
+    <context:component-scan base-package="com.xiandian.cloud.web"/>
+ 	
+    <mvc:annotation-driven/>
+ 	
+    
+    <mvc:resources mapping="/assets/stylesheets/**" location="/assets/stylesheets/"/>  
+  	<mvc:resources mapping="/assets/stylesheets/bootstrap/**" location="/assets/stylesheets/bootstrap/"/>  
+    <mvc:resources mapping="/assets/images/**" location="/assets/images/"/>
+    <mvc:resources mapping="/assets/fonts/**" location="/assets/fonts/"/>
+    <mvc:resources mapping="/assets/stream/**" location="/assets/stream/"/>
+    <mvc:resources mapping="/assets/javascripts/jquery/**" location="/assets/javascripts/jquery/"/>
+    <mvc:resources mapping="/assets/javascripts/bootstrap/**" location="/assets/javascripts/bootstrap/"/>
+    <mvc:resources mapping="/assets/javascripts/plugins/validate/**" location="/assets/javascripts/plugins/validate/"/>
+    <mvc:resources mapping="/assets/javascripts/citylist/**" location="/assets/javascripts/citylist/"/>
+    <mvc:resources mapping="/assets/javascripts/**" location="/assets/javascripts/"/>
+    <mvc:resources mapping="/assets/javascripts/ie/**" location="/assets/javascripts/ie/"/>
+    <mvc:resources mapping="/assets/ueditor/**" location="/assets/ueditor/"/>
+    <mvc:resources mapping="/assets/ueditor/jsp/**" location="/assets/ueditor/jsp/"/>
+    <mvc:resources mapping="/assets/sky-forms-pro/**" location="/assets/sky-forms-pro/"/>
+    
+    <mvc:resources mapping="/assets/plugins/**" location="/assets/plugins/"/>
+    
+    <mvc:resources mapping="/WEB-INF/**" location="/WEB-INF/"/>  
+    
+    <mvc:resources mapping="/json/**" location="/json/"/>
+    
+    <mvc:resources mapping="/51job/**" location="/WEB-INF/view/51job/" />
+        
+    <!-- 默认访问跳转到登录页面 -->
+    <mvc:view-controller path="/" view-name="forward:/course/index/1" />
+    
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/plain;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+                <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/plain;charset=UTF-8</value>
+                            <value>application/json;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+ 	
+    <!-- freemarker的配置-->
+    <bean id="freemarkerConfigurer"
+          class="com.xiandian.cloud.common.util.ShiroTagFreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/view/" />
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="freemarkerVariables">
+            <map >
+				<entry key="sso" value="${sso}" />
+				<entry key="ucurl" value="${ucurl}" />
+				<entry key="visiturl" value="${visiturl}" />
+				<entry key="savetype" value="${savetype}" />
+				<entry key="prefix" value="${hdfs_img_prefix}"/>
+				<entry key="suffix" value="${hdfs_img_suffix}"/>
+            </map>
+        </property>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">10</prop>
+                <prop key="locale">zh_CN</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="date_format">yyyy-MM-dd</prop>
+                <prop key="number_format">#.##</prop>
+            </props>
+        </property>
+    </bean>
+ 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="contentType" value="text/html; charset=UTF-8"/>
+        <property name="cache" value="true"/>
+        <property name="prefix" value=""/>
+        <property name="suffix" value=".html"/>
+        <property name="exposeSpringMacroHelpers" value="true"/>
+        <property name="exposeRequestAttributes" value="true"/>
+        <property name="exposeSessionAttributes" value="true"/>
+        <property name="requestContextAttribute" value="request"/>
+    </bean>
+   
+
+     	
+    
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+		<property name="supportedMediaTypes" value="application/json" />
+	</bean>
+	
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jsonConverter" />
+			</list>
+		</property>
+	</bean>
+	
+   	<bean id="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	
+   <!--线程池异步发送邮件-->
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="5" />
+        <property name="maxPoolSize" value="10" />
+        <property name="queueCapacity" value="25" />
+    </bean>
+</beans>

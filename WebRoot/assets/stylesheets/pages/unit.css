@@ -1,0 +1,49 @@
+.ui-autocomplete{width: 305px;z-index: 1000;border: 1px solid rgb(204, 204, 204);background-color: white;}
+.product-ratings li .rating {
+	color: #e6e6e3;
+}
+
+.product-ratings li .rating-selected {
+	color: #efa501;
+}
+.stars-0, .stars-1, .stars-2, .stars-3, .stars-4, .stars-5 {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	overflow:hidden;
+	width:85px;
+	height:16px;
+	background:url("${request.contextPath}/assets/images/stars.png") no-repeat;
+} 
+
+.stars-5 {
+	background-position:0 0px;
+}
+
+.stars-4 {
+	background-position:0 -16px;
+}
+
+.stars-3 {
+	background-position:0 -32px;
+}
+
+.stars-2 {
+	background-position:0 -48px;
+}
+
+.stars-1 {
+	background-position:0 -64px;
+}
+
+.stars-0 {
+	background-position:0 -80px;
+}
+
+.syntaxhighlighter td.code{
+    padding: 8px 0!important;
+}
+
+#toolbar{
+display:none!important
+}

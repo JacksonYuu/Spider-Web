@@ -1,0 +1,131 @@
+
+.pagination>.onactive>a {
+	color: #337AB7 !important;
+	background-color: #FFFFFF !important;
+	border-color: #DDDDDD !important;
+	cursor: pointer !important;
+}
+.pagination>.disabled>a{
+    color: #999;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+.cattag {
+	margin: 0 10px;
+	cursor: pointer
+}
+
+.on {
+	color: #428bca
+}
+
+li.tagon a {
+	color: #1caaea;
+	cursor: default;
+}
+
+.sort-menu-active {
+	/* background: #2aabe6;
+	text-decoration: none; */
+	color: #2aabe6;
+}
+
+.jptj-bg {
+	background-color: #ffffff;
+	min-height: 250px;
+	width: 100%;
+	border: 1px solid #ececec;
+	padding: 10px 25px;
+}
+
+.jptj-title {
+	padding: 5px 0px 5px 0;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 32px;
+	border-bottom: 1px solid #dfdee0;
+}
+
+.jptj-course {
+	margin-top: 20px;
+	margin-bottom: 20px
+}
+
+.jptj_p {
+	color: #5A8FBD;
+	text-decoration: none;
+	font-size: 15px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-top: 5px
+}
+
+.jptj-course:hover .jptj_p {
+	color: #72c02c;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #f9f9f9;
+	border: 0px solid transparent;
+	border-radius: 0px;
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .05);
+	box-shadow: 0 0px 0px rgba(0, 0, 0, .05);
+}
+.course-li .course-information a {
+	color: #333;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600
+}
+
+.search {
+	border: 0px solid #e9e9e9;
+}
+
+.search-field {
+	border-bottom: 0px dashed #e9e9e9;
+	margin-bottom: 25px;
+}
+
+.search-list li.active {
+	background: #006cb5;
+	text-decoration: none;
+}
+
+.search-list li.active a {
+	color: #fff !important
+}
+
+.tagon {
+	background: #006cb5;
+	text-decoration: none;
+}
+
+li.tagon a {
+	color: #fff !important
+}
+
+.search-sort {
+	font-weight: 600
+}
+.course-progress-bar {
+	width: 100%;
+	height: 5px;
+	background-color: #eee
+}
+
+.course-progress-bar>div {
+	background-color: #5ac65a;
+	box-shadow: none
+}
+
+.orgimg {
+    margin-top: -12px;
+    margin-right: 7px;
+    width: 50px;
+    height: 40px;
+    }

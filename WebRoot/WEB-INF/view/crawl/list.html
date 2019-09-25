@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<title>岗位数据</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<#include '../common/css.html'>
+<style>
+.stepIcon {
+	position: relative;
+	width: 86%;
+	margin: 0 auto;
+	height: 118px;
+	background: url('${request.contextPath}/assets/images/stepIcon.png')
+		no-repeat
+}
+
+.regContent {
+	margin: 20px auto;
+	min-height: 200px;
+	width: 94%;
+}
+
+.regTitle {
+	padding-bottom: 8px;
+	border-bottom: 1px solid #ccc;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.form-content {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.mustInput {
+	color: #FB3C3C;
+	padding-top: 7px;
+	position: relative;
+	padding-right: 4px;
+}
+
+.upBtn {
+	margin-top: 10px
+}
+
+.introduce {
+	padding-left: 10px;
+	font-size: 10px;
+	color: #333;
+	font-weight: 500;
+}
+
+.form-xy {
+	border: 1px solid #ccc;
+	height: 270px;
+	margin-bottom: 10px;
+	padding: 5px;
+	overflow-y: scroll;
+}
+
+.topBar {
+	border-top: 3px solid #1174bb;
+}
+
+.analysePic {
+	margin: 10px 0 20px
+}
+
+.positionSearch {
+	float: left;
+	width: 83%;
+	border-radius: 0px !important;
+	font-size: 14px;
+	font-size: 14px;
+	line-height: 1.57143;
+	color: #666;
+	border: 1px solid #ccc;
+}
+
+#searchresult {
+	background: #188EEE;
+	position: absolute;
+	padding: 6px 21px;
+	float: right;
+	text-decoration: none;
+}
+
+.conditionBox {
+	margin: 10px 0
+}
+
+.selectControl {
+	height: 35px !important;
+	border-radius: 0px
+}
+
+.resultBox {
+	margin: 20px 0;
+	padding: 5px 0;
+	background: #f9f9f9;
+	color: #A5A5A5
+}
+
+.resultNum span {
+	color: #FFA500
+}
+
+.company {
+	font-size: 10px
+}
+
+.PositionName {
+	font-size: 15px;
+	font-weight: 600;
+	color: #2A92E6
+}
+
+.pt20 {
+	padding-top: 20px !important;
+	font-size: 16px
+}
+
+.tc {
+	text-align: center
+}
+
+.tr {
+	text-align: right
+}
+
+.pxBox {
+	background: #f9f9f9;
+	border-top: 2px solid #188EEE;
+	border-right: 1px solid #EAEAEA;
+}
+
+.pxyq {
+	border-left: 1px solid #EAEAEA;
+}
+
+.pxyq a {
+	display: block;
+	padding: 10px 45px;
+	color: #717171
+}
+
+.pxBox .active {
+	background: #fff
+}
+
+.pxBox .active a {
+	color: #333;
+	font-weight: 600
+}
+
+.analysePic {
+	border: 1px solid #ccc;
+	min-height: 400px;
+	padding: 10px
+}
+
+.conditionBoxbtn {
+	padding-left: 29px;
+	padding-top: 6px;
+}
+
+.jobtitle {
+	font-size: 17px;
+	line-height: 2.5;
+	font-weight: 600;
+	color: #49A3E4;
+}
+
+.chooseWd {
+	border: 1px solid #ccc;
+	padding: 5px 3px
+}
+
+.picbox {
+	overflow: hidden;
+	max-height: 400px;
+}
+
+@media ( max-width : 767px) {
+	.pxyq a {
+		padding: 10px 5px !important;
+	}
+	.Jobcity {
+		font-size: 10px;
+	}
+}
+</style>
+</head>
+<body>
+	<div class="body">
+		<div class="container compnyconter"
+			style="margin-bottom: 20px; background-color: #fff; border-radius: 7px;">
+			<div class="position_list">
+				<div class="pxBox">
+					<div class="pull-left">
+						<!-- <ul>
+							<li class="pull-left pxyq active" id="defaultsort"><a
+								href="javascript:void(0)" onclick="sort(0)">默认排序</a></li>
+							<li class="pull-left pxyq" id="createtimesort"><a
+								href="javascript:void(0)" onclick="sort(1)">按发布时间排序</a></li>
+							<li class="pull-left pxyq" id="salarysort"><a
+								href="javascript:void(0)" onclick="sort(2)">按薪资排序</a></li>
+							<div class="clearfix"></div>
+						</ul> -->
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<table class="table">
+					<input type="hidden" id="hiden" value="1">
+					<tbody id="list">
+						<#if jobBean??> <#list jobBean as job>
+						<tr>
+							<td>
+								<p class="PositionName">
+									<a href="${request.contextPath}/51job/${job.html}"
+										target="_blank">${job.jobname}</a>
+								</p>
+								<p class="company">${job.name}</p>
+							</td>
+							<td class="Jobcondition pt20 hidden-xs">${job.city}</td>
+							<td class="Jobcategory pt20 tc hidden-xs">${job.wages}</td>
+							<td class="Jobtime pt20 tr hidden-xs">${job.createtime}</td>
+						</tr>
+						</#list> </#if>
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+				<div class="col-xs-12" style="border: 1px">
+					<#list jobBean as job> </#list>
+				</div>
+			</div>
+			<div style="text-align: center; margin-top: 20px;">
+				<ul id="pagination">
+					<ul class="pagination lastspan">
+					<#if pagecount??> <#list 1..pagecount as pc>
+						<#if (pc <  pages-5) ||( pc > pages+5) >
+						
+						<#else >
+							<li class="page " id ="pg${pc}" jp-role="page" jp-data="1"><a href="${request.contextPath}/course/index/${pc}">${pc}</a></li>
+						</#if>					
+					</#list> </#if>
+					</ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<#include '../common/js.html'> 
+	<script type="text/javascript" src="${request.contextPath}/assets/javascripts/jqPaginator.js">
+	</script> <script type="text/javascript">
+			$(function() {
+				$("#pg${pages}").addClass("active"); 
+			});
+		</script>
+	
+</body>
+</html>

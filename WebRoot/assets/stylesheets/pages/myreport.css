@@ -1,0 +1,100 @@
+.report-item-comments {
+	padding: 0;
+	color: #9b9da2;
+	font-size: 13px;
+}
+
+.report-owner {
+	text-align: right;
+	color: #9b9da2;
+	margin: 0 5px;
+}
+
+.report-owner .owner-list {
+	cursor: pointer;
+}
+
+.report-owner .owner-list.active {
+	color: #428bca;
+}
+
+
+.report-item {
+	border-radius: 3px;
+	padding: 6px 20px 20px;
+}
+
+.report-item>a {
+	display: block;
+	position: relative;
+	height: 220px;
+	margin: 15px 0;
+	padding: 25px 15px;
+	color: #565a61;
+	background: #f7f8fa;
+	border: 1px solid #eee;
+}
+.report-item>a:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 16px 16px 0;
+    border-color: #fff #fff #e3e8eb #e3e8eb;
+}
+.report-item-course,.report-item-lab {
+	margin-bottom: 10px;
+	overflow: hidden;
+	min-height: 75px;
+}
+
+.report-item-lab {
+	max-height: 38px;
+	color: #565a61;
+	font-size: 13px;
+}
+
+.report-item-count {
+	position: absolute;
+	left: -4px;
+	bottom: 20px;
+	padding: 0 24px 0 12px;
+	height: 24px;
+	line-height: 22px;
+	background: #fff;
+	border: 1px solid #e3e8eb;
+	font-size: 12px;
+}
+
+.report-item-arrow {
+	top: -1px;
+	right: -1px;
+	border-top: 12px solid transparent;
+	border-right: 12px solid #e3e8eb;
+	border-bottom: 12px solid transparent;
+}
+
+.report-item-arrow-line {
+	top: -11px;
+	right: -12px;
+	border-top: 11px solid transparent;
+	border-right: 11px solid #f7f8fa;
+	border-bottom: 11px solid transparent;
+}
+
+.report-item-arrow,.report-item-arrow-line {
+	position: absolute;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+}
+
+.report-item-author {
+	text-overflow: ellipsis;
+	color: #565a61;
+	white-space: nowrap;
+}

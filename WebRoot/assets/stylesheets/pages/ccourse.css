@@ -1,0 +1,80 @@
+.blod {
+	font-weight: 600
+}
+
+.course-cover-heading .title {
+	font-size: 20px;
+	margin: 0 0 6px;
+}
+
+.course-cover-heading .stats {
+	margin-bottom: 10px;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #0099ff;
+	border-color: #0099ff;
+}
+
+.panel-default {
+	border-color: #fff;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 0px solid transparent;
+	border-radius: 0px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0 0 0 rgba(0, 0, 0, .05);
+}
+
+.panel-default>.panel-heading {
+	color: #333;
+	background-color: #fff;
+	border-color: #ddd;
+	padding-left: 0;
+}
+
+.course-cover-heading .picture {
+	padding-left: 0;
+}
+
+.info {
+	margin-left: 20px
+}
+
+.teacher-carousel .carousel {
+	width: auto;
+}
+
+.tabactive {
+	color: #1caaea;
+	border-bottom: 5px solid #1caaea;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    background-color: #fff;
+    border: 0px solid #fff;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857;
+    border: 0px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+   text-decoration: none; 
+   background-color: #fff; 
+}
+
+.video-js .vjs-big-play-button {
+    top: 50px!important;
+    left: 75px!important;
+}
